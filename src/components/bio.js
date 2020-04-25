@@ -7,8 +7,19 @@
 
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
+import styled from "@emotion/styled"
+import { rhythm } from "../utils/typography"
+import Image from "gatsby-image"
 
-import { BioContainer, BioImage } from "./smallComponents"
+const BioContainer = styled.div`
+    display: flex;
+`
+const BioImage = styled(Image)`
+    margin-right: ${rhythm(1 / 2)};
+    margin-bottom: 0;
+    min-width: 50px;
+    border-radius: 100%;
+`
 
 const Bio = () => {
   const data = useStaticQuery(graphql`
