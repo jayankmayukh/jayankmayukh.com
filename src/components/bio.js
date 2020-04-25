@@ -7,9 +7,8 @@
 
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import Image from "gatsby-image"
 
-import { rhythm } from "../utils/typography"
+import { BioContainer, BioImage } from "./smallComponents"
 
 const Bio = () => {
   const data = useStaticQuery(graphql`
@@ -39,21 +38,10 @@ const Bio = () => {
 
   const { author, social } = data.site.siteMetadata
   return (
-    <div
-      style={{
-        display: `flex`,
-        marginBottom: rhythm(2.5),
-      }}
-    >
-      <Image
+    <BioContainer>
+      <BioImage
         fixed={data.avatar.childImageSharp.fixed}
         alt={author.name}
-        style={{
-          marginRight: rhythm(1 / 2),
-          marginBottom: 0,
-          minWidth: 50,
-          borderRadius: `100%`,
-        }}
         imgStyle={{
           borderRadius: `50%`,
         }}
@@ -61,9 +49,13 @@ const Bio = () => {
       <p>
         Written by <strong>{author.name}</strong> {author.summary}
         {` `}
-        Find him at <a href={`https://www.linkedin.com/in/${social.linkedin}/`}>Linkedin</a> and <a href={`https://github.com/${social.github}/`}>GitHub</a>.
+        Find him at 
+        {` `}
+        <a href={`https://www.linkedin.com/in/${social.linkedin}/`}>
+          LinkedIn
+        </a> and <a href={`https://github.com/${social.github}/`}>GitHub</a>.
       </p>
-    </div>
+    </BioContainer>
   )
 }
 
