@@ -1,14 +1,16 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `Jayank Mayukh`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `Jayank Mayukh`,
+      summary: `who loves programming.`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+    description: `A smart developer's journey.`,
+    siteUrl: `https://jayankmayukh.com`,
     social: {
-      twitter: `kylemathews`,
+      linkedin: `jayank-mayukh`,
+      github: `jayankmayukh`,
+      twitter: `jayank_mayukh`,
     },
   },
   plugins: [
@@ -64,9 +66,9 @@ module.exports = {
         short_name: `GatsbyJS`,
         start_url: `/`,
         background_color: `#ffffff`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `content/assets/gatsby-icon.png`,
+        theme_color: `#4ca3eb`,
+        display: `standalone`,
+        icon: `static/android-chrome-512x512.png`,
       },
     },
     `gatsby-plugin-react-helmet`,
@@ -78,6 +80,6 @@ module.exports = {
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    `gatsby-plugin-offline`,
   ],
 }
