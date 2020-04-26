@@ -1,12 +1,17 @@
 import React from "react"
+import styled from "@emotion/styled";
+import { rhythm } from "../utils/typography"
+
+const StyledDiv = styled.div`
+    margin-top: ${rhythm(1)};
+`
 
 export const CCLicense = ()=>{
     return (
-        <div>
-            <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/" style={{}}>
-                <img alt="Creative Commons License" style={{borderWidth:0, margin: 0}} src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" />
-            </a><br/>
-            This work by
+        <StyledDiv>
+            <hr/>
+            <br/>
+            &copy; {(new Date()).getFullYear()}
             {' '}
             <a {...{'xmlns:cc': "https://creativecommons.org/ns#"}} 
                 href="https://jayankmayukh.com"
@@ -14,13 +19,11 @@ export const CCLicense = ()=>{
                 rel="cc:attributionURL">
                     Jayank Mayukh
             </a>
+            {' '} |
             {' '}
-            is licensed under a
-            {' '}
-            <a rel="license" 
-                href="https://creativecommons.org/licenses/by-sa/4.0/">
-                    Creative Commons Attribution-ShareAlike 4.0 International License
+            <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">
+                    License
             </a>.
-        </div>
+        </StyledDiv>
     );
 }

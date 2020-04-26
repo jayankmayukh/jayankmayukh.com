@@ -10,15 +10,13 @@ const MainTitle = styled.h1`
     margin-bottom: ${rhythm(1.5)};
     margin-top: 0;
 `
-
-const StyledLink = styled(Link)`
-    box-shadow: none;
-    color: inherit;
+const OtherPageTitle = styled.h3`
+	margin-top: 0;
 `
 
-const OtherPageTitle = styled.h3`
-    font-family: Montserrat, sans-serif;
-	margin-top: 0;
+const TitleStyledLink = styled(Link)`
+    box-shadow: none;
+    color: inherit;
 `
 
 const PageContainer = styled.div`
@@ -29,7 +27,14 @@ const PageContainer = styled.div`
 `
 
 const StyledBody = styled.div`
-    background-color: #f9f9fd;
+    background-color: #fff;
+`
+const StyledA = styled.a`
+	margin: ${rhythm(1 / 3)};
+`
+const StyledLink = styled(Link)`
+	margin: ${rhythm(1 / 3)};
+	margin-left: 0; 
 `
 
 const Layout = ({ location, title, children }) => {
@@ -40,16 +45,28 @@ const Layout = ({ location, title, children }) => {
 		header = (
 			<React.Fragment>
 				<MainTitle>
-					<StyledLink to={'/'}>{title}</StyledLink>
+					<TitleStyledLink to={'/'}>{title}</TitleStyledLink>
 				</MainTitle>
 				<Bio />
 			</React.Fragment>
 		)
 	} else {
 		header = (
-			<OtherPageTitle>
-				<StyledLink to={'/'}>Home</StyledLink>
-			</OtherPageTitle>
+			<div>
+				<OtherPageTitle>
+					<TitleStyledLink to={'/'}>{title}</TitleStyledLink>
+				</OtherPageTitle>
+				<StyledLink to={'/'}>All Posts</StyledLink>
+				<StyledA href="https://github.com/jayankmayukh" target="_blank">
+					GitHub
+				</StyledA>
+				<StyledA href="https://linkedin.com/in/jayank-mayukh" target="_blank">
+					LinkedIn
+				</StyledA>
+				<StyledA href="https://twitter.com/jayank_mayukh" target="_blank">
+					Twitter
+				</StyledA>
+			</div>
 		)
 	}
 	return (
@@ -61,7 +78,6 @@ const Layout = ({ location, title, children }) => {
 			</header>
 			<main>{children}</main>
 			<footer>
-				<hr/>
 				<CCLicense/>
 			</footer>
 		</PageContainer>

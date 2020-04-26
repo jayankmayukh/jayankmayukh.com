@@ -4,6 +4,16 @@ import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
+import styled from "@emotion/styled"
+
+const StyledUL = styled.ul`
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+`
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
     const post = data.markdownRemark
@@ -42,15 +52,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             </article>
 
             <nav>
-                <ul
-                    style={{
-                        display: `flex`,
-                        flexWrap: `wrap`,
-                        justifyContent: `space-between`,
-                        listStyle: `none`,
-                        padding: 0,
-                    }}
-                >
+                <StyledUL>
                     <li>
                         {previous && (
                             <Link to={previous.fields.slug} rel="prev">
@@ -65,7 +67,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
                             </Link>
                         )}
                     </li>
-                </ul>
+                </StyledUL>
             </nav>
         </Layout>
     )
