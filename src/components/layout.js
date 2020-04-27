@@ -57,13 +57,13 @@ const Layout = ({ location, title, children }) => {
 					<TitleStyledLink to={'/'}>{title}</TitleStyledLink>
 				</OtherPageTitle>
 				<StyledLink to={'/'}>All Posts</StyledLink>
-				<StyledA href="https://github.com/jayankmayukh" target="_blank">
+				<StyledA rel="noopener" href="https://github.com/jayankmayukh" target="_blank">
 					GitHub
 				</StyledA>
-				<StyledA href="https://linkedin.com/in/jayank-mayukh" target="_blank">
+				<StyledA rel="noopener" href="https://linkedin.com/in/jayank-mayukh" target="_blank">
 					LinkedIn
 				</StyledA>
-				<StyledA href="https://twitter.com/jayank_mayukh" target="_blank">
+				<StyledA rel="noopener" href="https://twitter.com/jayank_mayukh" target="_blank">
 					Twitter
 				</StyledA>
 			</div>

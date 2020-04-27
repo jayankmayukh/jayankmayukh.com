@@ -62,15 +62,15 @@ const Bio = () => {
         {` `/* <br/> */}
         Find him at 
         {` `}
-        <a href={`https://www.linkedin.com/in/${social.linkedin}/`} target={`_blank`}>
+        <a rel="noopener" href={`https://www.linkedin.com/in/${social.linkedin}/`} target={`_blank`}>
           LinkedIn
         </a>,
         {` `}
-        <a href={`https://github.com/${social.github}/`} target={`_blank`}>
+        <a rel="noopener" href={`https://github.com/${social.github}/`} target={`_blank`}>
           GitHub
         </a>,
         {` `}
-        <a href={`https://twitter.com/jayank_mayukh`} target={`_blank`}>Twitter</a>
+        <a rel="noopener" href={`https://twitter.com/jayank_mayukh`} target={`_blank`}>Twitter</a>
         {` `}
         or email at <a href={`mailto:jayankmayukh@gmail.com`}>jayankmayukh@gmail.com</a>.
       </p>
