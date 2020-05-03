@@ -41,7 +41,7 @@
 	"devDependencies": {
 		"prettier": "2.0.4"
 	},
-	"homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
+	"homepage": "https://github.com/jayankmayukh/jayankmayukh.com#readme",
 	"keywords": [
 		"gatsby"
 	],
@@ -49,7 +49,7 @@
 	"main": "n/a",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
+		"url": "git+https://github.com/jayankmayukh/jayankmayukh.com.git"
 	},
 	"scripts": {
 		"build": "gatsby build",
@@ -58,6 +58,7 @@
 		"start": "npm run develop",
 		"serve": "gatsby serve",
 		"clean": "gatsby clean",
-		"test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+		"test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+		"manage-blog": "node ./manage-blog/manage-blog.js"
 	}
 }
