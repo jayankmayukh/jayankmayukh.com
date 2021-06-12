@@ -58,9 +58,9 @@ const Bio = () => {
         }}
       />
       <p>
-        Written by <strong>{author.name}</strong> {author.summary}
-        {` `/* <br/> */}
-        Find him at 
+        Written by <strong>{author.name}</strong>
+        <br />
+        Find me at 
         {` `}
         <a rel="noopener" href={`https://www.linkedin.com/in/${social.linkedin}/`} target={`_blank`}>
           LinkedIn
@@ -68,10 +68,10 @@ const Bio = () => {
         {` `}
         <a rel="noopener" href={`https://github.com/${social.github}/`} target={`_blank`}>
           GitHub
-        </a>,
+        </a>
         {` `}
-        <a rel="noopener" href={`https://twitter.com/jayank_mayukh`} target={`_blank`}>Twitter</a>
-        {` `}
+        {/* <a rel="noopener" href={`https://twitter.com/jayank_mayukh`} target={`_blank`}>Twitter</a>
+        {` `} */}
         or email at <a href={`mailto:jayankmayukh@gmail.com`}>jayankmayukh@gmail.com</a>.
       </p>
     </BioContainer>

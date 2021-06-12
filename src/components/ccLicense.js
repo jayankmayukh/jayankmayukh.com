@@ -21,7 +21,7 @@ export const CCLicense = ()=>{
             </a>
             {' '} |
             {' '}
-            <a rel="license noopener" href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">
+            <a rel="license noopener noreferrer" href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">
                     License
             </a>.
         </StyledDiv>
