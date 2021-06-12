@@ -63,9 +63,6 @@ const Layout = ({ location, title, children }) => {
 				<StyledA rel="noopener" href="https://linkedin.com/in/jayank-mayukh" target="_blank">
 					LinkedIn
 				</StyledA>
-				<StyledA rel="noopener" href="https://twitter.com/jayank_mayukh" target="_blank">
-					Twitter
-				</StyledA>
 			</div>
 		)
 	}
