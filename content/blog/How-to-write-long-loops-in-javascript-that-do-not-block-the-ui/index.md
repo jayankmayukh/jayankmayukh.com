@@ -11,6 +11,7 @@ In this article I will try to explain them with some simple examples.
 ## Javascript is Single Threaded
 
 > __Note:__ Javascript can have limited multi-threaded functionality via workers.
+
 While this is not something many people do not know about, it is easy to forget about the implications of this fact.
 Let us try to understand what it means to be single threaded. For this conversation we may note the following two points:
 
