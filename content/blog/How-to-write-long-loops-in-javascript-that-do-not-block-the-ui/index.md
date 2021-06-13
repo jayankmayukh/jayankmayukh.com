@@ -92,8 +92,8 @@ async function asyncCpuIntensiveTask(iter = 0) {
 ```
 Update your code to use `asyncCpuIntensiveTask` function instead of `cpuIntensiveTask` or open this
 <a href="https://jsfiddle.net/jayankmayukh/59x471b0/" rel="noopener noreferrer" target="_blank">JS Fiddle</a>.
-This time you will notice that both the buttons, one with a `asyncCpuIntensiveTask` as well as the one without any callback,
-are equally fast in showing the ui updates.
+This time you will notice that both the buttons, one with an `asyncCpuIntensiveTask` as well as the one without any callback,
+are equally fast in showing the UI updates.
 
 ## Explanation
 `setTimeout` is a special function, it lets us schedule a callback function __at least__ after a certain amount of time has passed.
@@ -110,6 +110,30 @@ this input event is put into the queue of callbacks to be executed. When the cal
 are executed first before our loop's next iteration, since callback from input has higher priority than a setTimeout. This way,
 the maximum time user needs to wait for the response to their action is reduced to the time taken by an individual iteration of
 our loop.
+
+## Making it better
+
+While the code shown above works fine, we would want to have a generic function so that we can use it anywhere. Also, we would
+want to know when this loop finishes. This can be accomplished in a variety of ways. One way to do it as follows:
+```javascript
+async function asyncFor(iters, callback) {
+    for (let i = 0; i < iters; i++) {
+        const promise = new Promise((resolve, _reject) => {
+            setTimeout(() => {
+                callback();
+                resolve();
+            }, 0);
+        });
+        await promise;
+    }
+}
+```
+The principle remains the same, but we wrap our setTimeout in a promise and `await` it before we move on to the next iteration.
+Since `asyncFor` returns a `Promise`, we can `await` (or use then) it to schedule some task to run after it. Open this
+<a href="https://jsfiddle.net/jayankmayukh/wc2vaq57/" rel="noopener noreferrer" target="_blank">JS Fiddle</a>
+to see this code in action. You can also see how it compares to a regular for loop. Regular for loop will complete much faster,
+but no UI updates would be seen while its executing whereas, AsyncFor takes a much longer time to finish, but all the UI updates
+are visible.
 
 ## Conclusion
 Using `setTimeout` to break long loops can often fix problems of sluggish UI caused by long executing loops. A drawback of this
